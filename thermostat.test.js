@@ -17,6 +17,10 @@ describe("Thermostat class", () => {
     thermostat.down(4);
     expect(thermostat.getTemperature()).toBe(20);
   });
+    it("ensures the minimum temperature is 10 degrees", () => {
+    thermostat.down(11);
+    expect(thermostat.getTemperature()).toBe(10);
+  });
   it("begins with Power saving mode on by default", () => {
     thermostat.up(26);
     expect(thermostat.getTemperature()).toBe(25);
@@ -25,5 +29,5 @@ describe("Thermostat class", () => {
     thermostat.turnOffPowerSaving();
     thermostat.up(33);
     expect(thermostat.getTemperature()).toBe(32);
-  });
+   });
 });
