@@ -17,4 +17,13 @@ describe("Thermostat class", () => {
     thermostat.down(4);
     expect(thermostat.getTemperature()).toBe(20);
   });
+  it("begins with Power saving mode on by default", () => {
+    thermostat.up(26);
+    expect(thermostat.getTemperature()).toBe(25);
+  });
+  it("turns power saving off", () => {
+    thermostat.turnOffPowerSaving();
+    thermostat.up(33);
+    expect(thermostat.getTemperature()).toBe(32);
+  });
 });
