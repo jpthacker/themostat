@@ -17,4 +17,8 @@ describe("Thermostat class", () => {
     thermostat.down(4);
     expect(thermostat.getTemperature()).toBe(20);
   });
+  it("ensures the minimum temperature is 10 degrees", () => {
+    thermostat.down(11);
+    expect(thermostat.getTemperature()).toBe(10);
+  });
 });
