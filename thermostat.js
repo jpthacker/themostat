@@ -24,8 +24,8 @@ class Thermostat {
     }
   }
 
-  turnOffPowerSaving() {
-    this.powerSavingMode = false;
+  togglePowerSaving() {
+    this.powerSavingMode ? this.powerSavingMode = false : this.powerSavingMode = true;
   }
 }
 
