@@ -39,4 +39,18 @@ describe("Thermostat class", () => {
     thermostat.resetTemperature();
     expect(thermostat.getTemperature()).toBe(20);
   });
+  it("gets the current emergy usage", () => {
+    expect(thermostat.getCurrentEnergyUsage()).toBe(
+      "The current temperature is 20: medium usage"
+    );
+    thermostat.setPowerSavingMode(false);
+    thermostat.up(33);
+    expect(thermostat.getCurrentEnergyUsage()).toBe(
+      "The current temperature is 32: high usage"
+    );
+    thermostat.down(33);
+    expect(thermostat.getCurrentEnergyUsage()).toBe(
+      "The current temperature is 10: low usage"
+    );
+  });
 });
