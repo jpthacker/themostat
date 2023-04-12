@@ -31,6 +31,16 @@ class Thermostat {
   resetTemperature() {
     this.temperature = 20;
   }
+
+  getCurrentEnergyUsage() {
+    if (this.temperature <= 18) {
+      return "The current temperature is 10: low usage";
+    } else if (this.temperature <= 25) {
+      return "The current temperature is 20: medium usage";
+    } else {
+      return "The current temperature is 32: high usage";
+    }
+  }
 }
 
 module.exports = Thermostat;
