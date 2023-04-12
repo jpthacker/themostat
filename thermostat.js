@@ -19,6 +19,9 @@ class Thermostat {
 
   down(amount) {
     this.temperature -= amount;
+    if (this.temperature < 10) {
+      this.temperature = 10;
+    }
   }
 
   togglePowerSaving() {
