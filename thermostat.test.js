@@ -26,12 +26,12 @@ describe("Thermostat class", () => {
     expect(thermostat.getTemperature()).toBe(25);
   });
   it("turns power saving off", () => {
-    thermostat.togglePowerSaving();
+    thermostat.setPowerSavingMode(false);
     thermostat.up(33);
     expect(thermostat.getTemperature()).toBe(32);
   });
   it("turns power saving back on", () => {
-    thermostat.togglePowerSaving();
+    thermostat.setPowerSavingMode(true);
     thermostat.up(26);
     expect(thermostat.getTemperature()).toBe(25);
   });
