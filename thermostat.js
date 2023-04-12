@@ -21,8 +21,8 @@ class Thermostat {
     this.temperature -= amount;
   }
 
-  turnOffPowerSaving() {
-    this.powerSavingMode = false;
+  togglePowerSaving() {
+    this.powerSavingMode ? this.powerSavingMode = false : this.powerSavingMode = true;
   }
 }
 
