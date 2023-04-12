@@ -19,24 +19,21 @@ const thermostat = new Thermostat();
 
 thermostat.getTemperature(); // should return 20
 
-thermostat.up();
-thermostat.up();
+thermostat.up(2);
 thermostat.getTemperature(); // should now return 22
 
-thermostat.down();
+thermostat.down(1);
 thermostat.getTemperature(); // should now return 21
 
 thermostat.setPowerSavingMode(true); // PSM is now on, max temperature is 25
 
-for (let i = 0 ; i < 10 ; i++) {
-  thermostat.up();
-}
+thermostat.up(10);
 
 thermostat.getTemperature(); // should be 25 (max reached)
 
 thermostat.setPowerSavingMode(false); // PSM is now off, max temperature is no more 25
 
-thermostat.up();
+thermostat.up(1);
 thermostat.getTemperature(); // should now return 26
 
 thermostat.reset();
